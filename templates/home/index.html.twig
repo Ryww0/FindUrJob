@@ -9,5 +9,12 @@
         <p>{{appliesPercent}}%</p>
         <p>objectif de la semaine : {{target}}</p>
     </div>
+    <div class="block">
+    {% for apply in applies|slice(0, 5) %}
+        <div class="apply-card">
+            <p>{{apply.company.name}}</p>
+        </div>
+    {% endfor %}
+    </div>
 </div>
 {% endblock %}

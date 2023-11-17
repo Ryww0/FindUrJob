@@ -28,7 +28,8 @@ class HomeController extends AbstractController
 
         return $this->render('home/index.html.twig', [
             "target" => $target,
-            "appliesPercent" => $appliesPercent
+            "appliesPercent" => $appliesPercent,
+            "applies" => $applies
         ]);
     }
 }
