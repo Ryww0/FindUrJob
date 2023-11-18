@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Nouvelle candidature - FindUrJob{% endblock %}
+    
+{% block body %}
+    {{ form_start(formAddApply)  }}
+    <input type="submit" value="Ajouter une candidature"/>
+    {{ form_end(formAddApply)  }}
+{% endblock %}

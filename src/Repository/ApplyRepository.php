@@ -47,6 +47,7 @@ class ApplyRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('a')
             ->andWhere('a.user = :user')
             ->setParameter('user', $user)
+            ->orderBy('a.id', "DESC")
             ->getQuery()
             ->getResult();
     }

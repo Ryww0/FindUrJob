@@ -5,16 +5,23 @@
 {% block body %}
 
 <div class="container">
-    <div class="block">
-        <p>{{appliesPercent}}%</p>
-        <p>objectif de la semaine : {{target}}</p>
-    </div>
+    <div>
+        <div class="block">
+            <h2>{{appliesPercent}}%</h2>
+            <p>objectif de la semaine : {{target}}</p>
+        </div>
+        <div class="block">
+        <p>taux de réponse</p>
+        </div>
+    </div> 
+
     <div class="block">
     {% for apply in applies|slice(0, 5) %}
         <div class="apply-card">
-            <p>{{apply.company.name}}</p>
+            <h3>{{apply.company.name}}</h3>
         </div>
     {% endfor %}
     </div>
 </div>
+<a href="{{ path('app_apply_new') }}" id="add-apply">ajouter</a>
 {% endblock %}

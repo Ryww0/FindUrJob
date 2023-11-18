@@ -19,6 +19,9 @@ class Apply
     #[ORM\ManyToOne(targetEntity: Company::class, inversedBy: 'applies')]
     private $company;
 
+    #[ORM\Column(type: 'boolean', nullable: true)]
+    private $state;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -44,6 +47,18 @@ class Apply
     public function setCompany(?Company $company): self
     {
         $this->company = $company;
+
+        return $this;
+    }
+
+    public function isState(): ?bool
+    {
+        return $this->state;
+    }
+
+    public function setState(?bool $state): self
+    {
+        $this->state = $state;
 
         return $this;
     }
